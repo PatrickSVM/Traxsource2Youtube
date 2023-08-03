@@ -1,3 +1,6 @@
+# Files
+secrets_file2.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
