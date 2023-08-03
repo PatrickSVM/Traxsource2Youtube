@@ -4,7 +4,7 @@ import google_auth_oauthlib.flow
 import googleapiclient.discovery
 import googleapiclient.errors
 
-from traxsource.traxsource import get_top_10
+from traxsource2youtube.traxsource import get_top_10
 
 
 def get_authenticated_service():
