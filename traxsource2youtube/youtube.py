@@ -240,6 +240,7 @@ def update_top10_playlist(url, name, description, client):
         query = f"{artist} - {title}"
         video_id = get_song_id(name=query, client=client)
 
+        # Add video to playlist
         add_video_to_playlist(playlist_id=playlist_id, video_id=video_id, client=client)
 
         print(f"{title} - {artist}\n")
