@@ -4,7 +4,7 @@
 <img src="https://www.traxsource.com/logos-and-images/logo-standard-background.png" align="center" width="100%" height="100%">
 </p>
 
-This repo contains tools to scrape the latest Top-10 Charts from Traxsource and transfer them into a Youtube playlist. 
+This repo contains tools to scrape the latest Top-10 Charts from [Traxsource](https://www.traxsource.com) and transfer them into a Youtube playlist. 
 
 ## Usage
 
