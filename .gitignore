@@ -1,6 +1,7 @@
 # Files
 secrets_file.json
 youtube_credentials.pickle
+Traxsource.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
