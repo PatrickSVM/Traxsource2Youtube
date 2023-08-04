@@ -6,9 +6,18 @@
 
 This repo contains tools to scrape the latest Top-10 Charts from [Traxsource](https://www.traxsource.com) and transfer them into a Youtube playlist. 
 
+The scripts currently cover the following genres:
+- Afro / Latin / Brazilian
+- Deep House
+- House
+- Leftfield
+- Lounge / Chillout
+- Minimal / Deeptech
+- Nu Disco / Indie Dance
+
 ## Usage
 
-The Youtube API has a quota of 10,000 units per day. As this fills up quite fast (at least with the current implementation), the scripts currently only enable creating the latest top-10 playlists of different genres. 
+The Youtube API has a quota of 10,000 units per day. As this fills up quite fast (at least with the current implementation), the scripts currently only enable creating the latest top-10 playlists of different genres. Given this limitation, around five playlists can be updated daily. 
 
 ### GCP prerequisites
 1. To use the Youtube API, it is necessary to have a Google Cloud Account (which must be linked to the Youtube account you want to use to create the playlists)
@@ -22,13 +31,13 @@ The Youtube API has a quota of 10,000 units per day. As this fills up quite fast
 First of all, install the package with `pip install .`
 
 Then, run the desired script to scrape the tracks on 
-Traxsource and to create the playlist on Youtube. For example, to get the newest charts for the genre [Minimal/Deeptech](https://www.traxsource.com/genre/16/minimal-deep-tech), the following command needs to be run:
+Traxsource and to create the playlist on Youtube. For example, to get the newest charts for the genre [Minimal / Deeptech](https://www.traxsource.com/genre/16/minimal-deep-tech), the following command needs to be run:
 
 ```bash
 python scripts/minimal_deeptech.py 
 ```
 
- If the code is run for the first time, a browser window will pop up, where you need to authenticate yourself. After that, another secrets file called "youtube_credentials".pickle" is created, which will be used for authentication for the following times. 
+ If the code is run for the first time, a browser window will pop up, where you need to authenticate yourself. After that, another secrets file called "youtube_credentials.pickle" is created, which will be used for authentication for the following times. 
 
  Inside the scripts, the name and description of each playlist can be changed.
 
