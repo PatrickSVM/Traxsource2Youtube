@@ -4,6 +4,7 @@ import google_auth_oauthlib.flow
 import googleapiclient.discovery
 import googleapiclient.errors
 
+from time import sleep
 from traxsource2youtube.traxsource import get_top_10
 
 
@@ -245,5 +246,8 @@ def update_top10_playlist(url, name, description, client):
 
         print(f"{title} - {artist}\n")
 
+        # Sleep for one second
+        sleep(1)
+
     print("All tracks successfully added.\n")
-    print(f"Playlist '{name}' is up to date!")
+    print(f"Playlist '{name}' is up to date!\n")
