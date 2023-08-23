@@ -234,7 +234,7 @@ def update_top10_playlist(url, name, description, client):
     # Retrieve songs
     titles, artists = get_top_10(URL=url)
 
-    print("\nAdding the following tracks:\n")
+    print("\n\nAdding the following tracks:\n")
 
     for title, artist in zip(titles, artists):
         # Get video id of top result
