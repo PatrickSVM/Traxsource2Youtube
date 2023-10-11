@@ -76,10 +76,13 @@ def get_song_id(name, client):
         # Call the search().list() method to search for videos
         search_response = (
             client.search()
-            .list(q=name, part="snippet", type="video", maxResults=1)
+            .list(q=name, part="snippet", type="video", maxResults=1, safeSearch="none")
             .execute()
         )
 
+        if search_response["pageInfo"]["totalResults"] == 0:
+            return None
+        
         # Extract video ID of the first
         for search_result in search_response.get("items", []):
             video_id = search_result["id"]["videoId"]
@@ -240,6 +243,10 @@ def update_top10_playlist(url, name, description, client):
         # Get video id of top result
         query = f"{artist} - {title}"
         video_id = get_song_id(name=query, client=client)
+
+        if video_id is None:
+            print("Song is skipped, no API results - it is too fresh!/n")
+            continue
 
         # Add video to playlist
         add_video_to_playlist(playlist_id=playlist_id, video_id=video_id, client=client)
