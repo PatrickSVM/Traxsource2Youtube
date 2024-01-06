@@ -2,7 +2,6 @@ import os
 import pickle
 import google_auth_oauthlib.flow
 import googleapiclient.discovery
-import googleapiclient.errors
 
 from time import sleep
 from traxsource2youtube.traxsource import get_top_10
@@ -249,9 +248,12 @@ def update_top10_playlist(url, name, description, client):
             continue
 
         # Add video to playlist
-        add_video_to_playlist(playlist_id=playlist_id, video_id=video_id, client=client)
+        try:
+            add_video_to_playlist(playlist_id=playlist_id, video_id=video_id, client=client)
+            print(f"{title} - {artist}\n")
+        except Exception as e:
+            print(f"Video is skipped as error occured. Related query: {title=} and {artist=}\n")
 
-        print(f"{title} - {artist}\n")
 
         # Sleep for one second
         sleep(1)
